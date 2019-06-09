@@ -6,8 +6,10 @@ ruby '2.5.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1', '>= 5.2.1.1'
 
- # Use jquery as the JavaScript library
- gem 'jquery-rails'
+# Bootstrap
+gem 'bootstrap-sass'
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
  
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
