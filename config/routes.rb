@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
-  get 'posts/index'
-  get 'posts/show'
-  get 'posts/new'
-  get 'posts/edit'
-  get 'welcome/index'
-  get 'welcome/about'
-  get 'welcome/contact'
-  get 'welcome/faq'
+  #instructs Rails to create post routes for creating, updating, viewing, and deleting instances of Post
+  resources :posts
+
+  get 'about' => 'welcome#about'
+  get 'contact' => 'welcome#contact'
+  get 'faq' => 'welcome#faq'
 
   root 'welcome#index'
 
