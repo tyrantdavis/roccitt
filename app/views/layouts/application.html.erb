@@ -18,7 +18,23 @@
       <li> <%= link_to "Contact", contact_path %>  </li>
       <li> <%= link_to "Faq", faq_path %>  </li>
     </ul>
-  </div>
-  <%= yield %>
+
+
+   
+     <% if flash[:notice] %>
+       <div class="alert alert-success">
+         <button type="button" class="close" data-dismiss="alert">&times;</button>
+         <%= flash[:notice] %>
+       </div>
+     <% elsif flash[:alert] %>
+       <div class="alert alert-warning">
+         <button type="button" class="close" data-dismiss="alert">&times;</button>
+         <%= flash[:alert] %>
+       </div>
+     <% end %>
+
+      <%= yield %>
+    </div>
+    
   </body>
 </html>
