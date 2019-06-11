@@ -10,6 +10,8 @@ RSpec.describe Topic, type: :model do
     public: public 
     )}
     
+    it { is_expected.to have_many(:posts) }
+
     describe "attributes" do
       it "has name, description, and public attributes" do
         expect(topic).to have_attributes( 
