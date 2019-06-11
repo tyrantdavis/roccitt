@@ -59,8 +59,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.8'
   gem 'rails-controller-testing'
 
-  # Shoulda makes it easier for us to write association tests that RSpec cannot handle 
-  gem 'shoulda'
+  # Shoulda-Matchers makes it easier for us to write association tests that RSpec cannot handle 
+  gem 'shoulda-matchers'
 end
 
 group :development do
