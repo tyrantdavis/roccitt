@@ -6,7 +6,7 @@
     <p><%=  @topic.description  %></p>
   </div>
   <div class="col-md-4">
-  <%=  link_to" New", new_post_path(@topic), class: 'btn btn-default btn-sm' %> 
+  <%=  link_to" New", new_topic_path(@topic), class: 'btn btn-default btn-sm' %> 
 
 <%# <%# override the default method (:topic) with :delete so that when the button is pressed the route called is the delete route. %> 
     <%=  link_to' Delete',  @topic, method: :delete, class: 'btn btn-danger btn-sm',  data: { confirm: 'Are you sure you want to delete this topic?' } %>

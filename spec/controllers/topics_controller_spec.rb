@@ -36,21 +36,21 @@ RSpec.describe TopicsController, type: :controller do
     end
   end
 
-    # describe "Topic create" do
-    #   it "increases the number of Topics by 1" do
-    #     expect{post :create, params: { topic: {name: RandomData.random_sentence, description: RandomData.random_paragraph, public: true}}}.to change(Topic,:count).by(1)
-    #   end
+    describe "Topic create" do
+      it "increases the number of Topics by 1" do
+        expect{post :create, params: { topic: {name: RandomData.random_sentence, description: RandomData.random_paragraph, public: true}}}.to change(Topic,:count).by(1)
+      end
 
-    # it "assigns the new topic to @topic" do
-    #     post :create, params: { topic: {name: RandomData.random_sentence, description: RandomData.random_paragraph, public: true }}
-    #     expect(assigns(:topic)).to eq Topic.last  
-    # end
+    it "assigns the new topic to @topic" do
+        post :create, params: { topic: {name: RandomData.random_sentence, description: RandomData.random_paragraph, public: true }}
+        expect(assigns(:topic)).to eq Topic.last  
+    end
 
-  #   it "redirects to the new topic" do
-  #       post :create, params: { topic: {name: RandomData.random_sentence, description: RandomData.random_paragraph, public: true }}
-  #       expect(response).to redirect_to Topic.last  
-  #   end
-  # end
+    it "redirects to the new topic" do
+        post :create, params: { topic: {name: RandomData.random_sentence, description: RandomData.random_paragraph, public: true }}
+        expect(response).to redirect_to Topic.last  
+    end
+  end
 
   describe "GET #show" do
     it "returns http success" do
