@@ -13,17 +13,17 @@ RSpec.describe PostsController, type: :controller do
 
   describe "GET #new" do
     it "returns http success" do
-      get :new
+      get :new, params: { topic_id: new_topic.id  }
       expect(response).to have_http_status(:success)
     end
 
     it "renders the #new view" do
-      get :new
+      get :new, params: { topic_id: new_topic.id  }
       expect(response).to render_template :new
     end
     
     it "instantiates @post" do
-      get :new
+      get :new, params: { topic_id: new_topic.id  }
       expect(assigns(:post)).not_to be_nil  
     end
   end
