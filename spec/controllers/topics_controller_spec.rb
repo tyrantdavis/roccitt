@@ -123,4 +123,17 @@ RSpec.describe TopicsController, type: :controller do
       expect(response).to redirect_to new_topic  
     end
   end
+
+  describe "DELETE destroy" do
+    it "deletes the topic" do
+      delete :destroy, params: {id: new_topic.id}
+      count = Topic.where({id: new_topic.id}).size
+      expect(count).to eq 0  
+    end
+    
+    it "redirects to the topic index" do
+      delete :destroy, params: {id: new_topic.id}
+      expect(response).to redirect_to topics_path  
+    end
+  end
 end
