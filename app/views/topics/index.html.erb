@@ -16,6 +16,13 @@
            </small>
          </div>
        </div>
+      <div class="public-private">
+          <% if  topic.public  %>
+          <b> <%=  "Public"  %></b>
+          <%  else  %>
+          <b> <%=  "Private"  %></b>
+          <%  end  %>
+     </div>
      <% end %>
    </div>
    <div class="col-md-4">
