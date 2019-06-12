@@ -70,4 +70,27 @@ RSpec.describe TopicsController, type: :controller do
   end
   
 
+  describe "GET #edit" do
+    it "returns http success" do
+      get :edit, params: {id: new_topic.id}
+      expect(response).to have_http_status(:success)
+    end
+
+    it "renders the #edit view" do
+      get :edit, params: {id: new_topic.id}
+      expect(response).to render_template :edit
+    end
+
+    it "assigns topic to be updated to @topic" do
+      get :edit,  params: {id: new_topic.id}
+
+      topic_instance = assigns(:topic)
+
+      expect(topic_instance.id).to eq new_topic.id
+      expect(topic_instance.name).to eq new_topic.name
+      expect(topic_instance.description).to eq new_topic.description
+      expect(topic_instance.public).to eq new_topic.public
+    end
+  end
+
 end
