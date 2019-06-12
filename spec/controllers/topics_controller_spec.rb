@@ -93,4 +93,34 @@ RSpec.describe TopicsController, type: :controller do
     end
   end
 
+
+  describe "PUT update" do
+    it "updates topic with expected attributes" do
+      new_name = RandomData.random_sentence
+      new_description = RandomData.random_paragraph
+      public_or_private = true
+
+      put :update,  params: {id: new_topic.id, topic: { name: new_name, description: new_description, public: public_or_private  }}
+
+      updated_topic = assigns(:topic)
+      expect(updated_topic.id).to eq new_topic.id  
+      expect(updated_topic.name).to eq new_name
+      expect(updated_topic.description).to eq new_description
+      expect(updated_topic.public).to eq public_or_private
+    end
+  
+    it "redirects to the updated topic" do
+      new_name = RandomData.random_sentence
+      new_description = RandomData.random_paragraph
+      public_or_private = true
+
+      put :update, params: { 
+        id: new_topic.id, 
+        topic: { name: new_name, 
+        description: new_description,
+        public: public_or_private
+        }}
+      expect(response).to redirect_to new_topic  
+    end
+  end
 end
