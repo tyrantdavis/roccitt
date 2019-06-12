@@ -11,13 +11,14 @@ RSpec.describe Topic, type: :model do
     )}
     
     it { is_expected.to have_many(:posts) }
+
     it { should validate_presence_of(:name) }
     it { should validate_presence_of(:description) }
     it { should validate_presence_of(:public) }
   
   # # is_at_least not behaving properly
-  it { should validate_presence_of(:title).is_at_least(5).on(:create) }
-  it { should validate_presence_of(:body).is_at_least(15).on(:create) }
+  it { should validate_length_of(:name).is_at_least(5).on(:create) }
+  it { should validate_length_of(:description).is_at_least(15).on(:create) }
 
 
     describe "attributes" do
