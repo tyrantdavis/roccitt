@@ -36,7 +36,6 @@ RSpec.describe User, type: :model do
        user.save
        expect(user.name).to eq "Roccitt User"  
      end
-     
    end
 
    # INVALID USER
