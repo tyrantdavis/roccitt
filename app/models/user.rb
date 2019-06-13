@@ -27,6 +27,4 @@ class User < ApplicationRecord
       self.email = email.downcase if email.present?
    end
    
-   
-
 end
