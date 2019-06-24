@@ -1,6 +1,6 @@
 class User < ApplicationRecord
    has_secure_password
-
+   has_many :posts
    before_save :format_email
    before_save :format_name
 
