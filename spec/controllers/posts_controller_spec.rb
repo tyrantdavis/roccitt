@@ -1,4 +1,5 @@
 require 'rails_helper'
+ include SessionsHelper
 
 RSpec.describe PostsController, type: :controller do
    let(:user) { User.create!(name: "Bloccit User", email: "user@bloccit.com", password: "helloworld") }
@@ -14,6 +15,67 @@ RSpec.describe PostsController, type: :controller do
       body: RandomData.random_paragraph,
       user: user
       ) }
+
+ # #5
+   context "guest user" do
+ # #6
+     describe "GET show" do
+       it "returns http success" do
+         get :show, params: { topic_id: new_topic.id, id: new_post.id}
+         expect(response).to have_http_status(:success)
+       end
+ 
+       it "renders the #show view" do
+         get :show, params: {topic_id: new_topic.id, id: new_post.id}
+         expect(response).to render_template :show
+       end
+ 
+       it "assigns new_post to @post" do
+         get :show, params: {topic_id: new_topic.id, id: new_post.id}
+         expect(assigns(:post)).to eq(new_post)
+       end
+     end
+ 
+ # #7
+     describe "GET new" do
+       it "returns http redirect" do
+         get :new, params: { topic_id: new_topic.id}
+ # #8
+         expect(response).to redirect_to(new_session_path)
+       end
+     end
+ 
+     describe "POST create" do
+       it "returns http redirect" do
+         post :create, params: {topic_id: new_topic.id, post: {title: RandomData.random_sentence, body: RandomData.random_paragraph}}
+         expect(response).to redirect_to(new_session_path)
+       end
+     end
+ 
+     describe "GET edit" do
+       it "returns http redirect" do
+         get :edit, params: {topic_id: new_topic.id, id: new_post.id}
+         expect(response).to redirect_to(new_session_path)
+       end
+     end
+ 
+     describe "PUT update" do
+       it "returns http redirect" do
+         new_title = RandomData.random_sentence
+         new_body = RandomData.random_paragraph
+ 
+         put :update, params: {topic_id: new_topic.id, id: new_post.id, post: {title: new_title, body: new_body}}
+         expect(response).to redirect_to(new_session_path)
+       end
+     end
+ 
+     describe "DELETE destroy" do
+       it "returns http redirect" do
+         delete :destroy, params: {topic_id: new_topic.id, id: new_post.id}
+         expect(response).to have_http_status(:redirect)
+       end
+     end
+   end
 
   describe "GET #new" do
     it "returns http success" do
