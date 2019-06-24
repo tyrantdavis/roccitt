@@ -77,6 +77,28 @@ RSpec.describe PostsController, type: :controller do
      end
    end
 
+  context "signed-in user" do 
+    before do
+      create_session(user)
+    end
+  
+  describe "GET #show" do
+    it "returns http success" do
+      get :show, params: {topic_id: new_topic.id,  id: new_post.id}
+      expect(response).to have_http_status(:success)
+    end
+
+    it "renders the #show view" do
+      get :show, params: {topic_id: new_topic.id, id: new_post.id}
+      expect(response).to render_template :show  
+    end
+
+    it "assigns new_post to @post" do
+      get :show, params: {topic_id: new_topic.id,  id: new_post.id}
+      expect(assigns(:post)).to eq(new_post)  
+    end
+  end
+
   describe "GET #new" do
     it "returns http success" do
       get :new, params: { topic_id: new_topic.id  }
@@ -118,24 +140,6 @@ RSpec.describe PostsController, type: :controller do
           post: {
             title: RandomData.random_sentence, body: RandomData.random_paragraph}}
         expect(response).to redirect_to [ new_topic, Post.last  ]
-    end
-  end
-  
-
-  describe "GET #show" do
-    it "returns http success" do
-      get :show, params: {topic_id: new_topic.id,  id: new_post.id}
-      expect(response).to have_http_status(:success)
-    end
-
-    it "renders the #show view" do
-      get :show, params: {topic_id: new_topic.id, id: new_post.id}
-      expect(response).to render_template :show  
-    end
-
-    it "assigns new_post to @post" do
-      get :show, params: {topic_id: new_topic.id,  id: new_post.id}
-      expect(assigns(:post)).to eq(new_post)  
     end
   end
 
@@ -212,9 +216,7 @@ RSpec.describe PostsController, type: :controller do
         topic_id: new_topic.id,
         id: new_post.id}
       expect(response).to redirect_to new_topic  
-    end
-    
-  end
-  
-
+    end  
+   end
+  end 
 end

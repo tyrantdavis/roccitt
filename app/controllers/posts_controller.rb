@@ -16,7 +16,7 @@ class PostsController < ApplicationController
     @topic = Topic.find(params[:topic_id])
 
     @post.topic = @topic
-
+    @post.user = current_user
     if @post.save
       flash[:notice] = "Post successfully created"
       redirect_to [@topic, @post]
