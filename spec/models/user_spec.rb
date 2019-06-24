@@ -3,6 +3,8 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
    let(:user) { User.create!(name: "Roccitt User", email: "user@roccitt.com", password: "password") }
 
+  it { is_expected.to have_many(:posts) }
+  
    # VALID USER
    # Shoulda tests for name
    it { is_expected.to validate_presence_of(:name) }
