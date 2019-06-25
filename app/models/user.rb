@@ -1,8 +1,8 @@
 class User < ApplicationRecord
-   has_secure_password
    has_many :posts
    before_save :format_email
    before_save :format_name
+   before_save :role?
 
    VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
 
@@ -18,6 +18,9 @@ class User < ApplicationRecord
             length: { minimum: 3, maximum: 254 },
             format: { with: VALID_EMAIL_REGEX  }
 
+   has_secure_password
+   enum role: [:member, :admin]
+   
    private
    def format_name
       self.name = name.split.each {|n| n.capitalize!}.join(" ") if name
@@ -25,6 +28,10 @@ class User < ApplicationRecord
 
    def format_email
       self.email = email.downcase if email.present?
+   end
+   
+   def role?
+      self.role ||= :member
    end
    
 end
