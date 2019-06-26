@@ -1,5 +1,6 @@
 class User < ApplicationRecord
    has_many :posts
+   has_many :comments
    before_save :format_email
    before_save :format_name
    before_save :role?

@@ -7,11 +7,10 @@ RSpec.describe Post, type: :model do
   let(:body) {  RandomData.random_paragraph  }
 
   let(:topic) { Topic.create!( name: name, description: description  )  }
-  #1
-   let(:user) { User.create!(name: "Rooccitt User", email: "user@roccitt.com", password: "helloworld") }
- # #2
-   let(:post) { topic.posts.create!(title: title, body: body, user: user) }
+  let(:user) { User.create!(name: "Rooccitt User", email: "user@roccitt.com", password: "helloworld") }
+  let(:post) { topic.posts.create!(title: title, body: body, user: user) }
 
+   it { is_expected.to have_many(:comments) }
   it { should belong_to( :topic  )  }
   it { should belong_to(:user) }
   it { should validate_presence_of(:title) }
