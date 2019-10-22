@@ -3,6 +3,7 @@ class Post < ApplicationRecord
     belongs_to :user
     # performs a "cascade delete", which ensures that when a post is deleted, all of its comments are too.
     has_many :comments, dependent: :destroy
+    has_many :votes, dependent: :destroy
    default_scope { order('created_at DESC') }
 
    validates :title, length: { minimum: 5 }, presence: true
