@@ -2,6 +2,7 @@ class User < ApplicationRecord
    has_many :posts, dependent: :destroy
    has_many :comments, dependent: :destroy
    has_many :votes, dependent: :destroy
+   has_many :favorites, dependent: :destroy
    before_save :format_email
    before_save :format_name
    before_save :role?
