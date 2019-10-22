@@ -10,5 +10,19 @@ class Post < ApplicationRecord
    validates :body, length: { minimum: 20 }, presence: true
    validates :topic, presence: true
    validates :user, presence: true
-   
+ 
+   def up_votes
+ # #9
+     votes.where(value: 1).count
+   end
+ 
+   def down_votes
+ # #10
+     votes.where(value: -1).count
+   end
+ 
+   def points
+ # #11
+     votes.sum(:value)
+   end
 end
