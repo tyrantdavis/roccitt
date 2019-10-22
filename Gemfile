@@ -74,6 +74,8 @@ group :development do
     gem 'sqlite3'
     # Pry 
   gem "pry-rails"
+  gem 'factory_girl_rails', '~> 4.0'
+
 end
 
  group :production do
