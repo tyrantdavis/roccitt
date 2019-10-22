@@ -24,6 +24,11 @@ class User < ApplicationRecord
    has_secure_password
    enum role: [:member, :admin]
    
+   public
+   def favorite_for(post)
+     favorites.where(post_id: post.id).first
+   end   
+   
    private
    def format_name
       self.name = name.split.each {|n| n.capitalize!}.join(" ") if name
@@ -37,7 +42,4 @@ class User < ApplicationRecord
       self.role ||= :member
    end
    
-   def favorite_for(post)
-     favorites.where(post_id: post.id).first
-   end   
 end
