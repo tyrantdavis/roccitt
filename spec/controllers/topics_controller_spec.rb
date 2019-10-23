@@ -2,11 +2,8 @@ require 'rails_helper'
  include SessionsHelper
 
 RSpec.describe TopicsController, type: :controller do
-  let(:new_topic) { Topic.create!( 
-    name: RandomData.random_sentence, 
-    description: RandomData.random_paragraph,
-    public: true
-    )  }
+   let(:new_topic) { create(:topic) }
+
 #Guest
     context "guest" do
       describe "GET #index" do
