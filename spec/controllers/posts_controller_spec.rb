@@ -2,20 +2,25 @@ require 'rails_helper'
  include SessionsHelper
 
 RSpec.describe PostsController, type: :controller do
-   let(:user) { User.create!(name: "Bloccit User", email: "user@bloccit.com", password: "helloworld") }
-  let(:user2) { User.create!(name: RandomData.random_name, email: RandomData.random_email, password: "helloworld", role: :member) }
+  #  let(:user) { User.create!(name: "Bloccit User", email: "user@bloccit.com", password: "helloworld") }
+  # let(:user2) { User.create!(name: RandomData.random_name, email: RandomData.random_email, password: "helloworld", role: :member) }
 
-  let(:new_topic) { Topic.create!( 
-    name: RandomData.random_sentence, 
-    description: RandomData.random_paragraph,
-    )  }
+  # let(:new_topic) { Topic.create!( 
+  #   name: RandomData.random_sentence, 
+  #   description: RandomData.random_paragraph,
+  #   )  }
 
-  let(:new_post)  { 
-    new_topic.posts.create!(
-      title: RandomData.random_sentence, 
-      body: RandomData.random_paragraph,
-      user: user
-      ) }
+  # let(:new_post)  { 
+  #   new_topic.posts.create!(
+  #     title: RandomData.random_sentence, 
+  #     body: RandomData.random_paragraph,
+  #     user: user
+  #     ) }
+   
+   let(:user) { create(:user) }
+   let(:user2) { create(:user) }     
+   let(:new_topic) { create(:topic) }
+   let(:new_post) { create(:post, topic: new_topic, user: user) }
 
  # #5
    context "guest user" do
