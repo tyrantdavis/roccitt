@@ -49,7 +49,7 @@ gem 'bcrypt'
 # gem 'capistrano-rails', group: :development
 
 gem 'will_paginate', '~> 3.1.1'
-
+gem 'pg'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
@@ -73,7 +73,7 @@ group :development do
     gem 'spring'
     gem 'spring-watcher-listen', '~> 2.0.0'
     # Use sqlite3 as the database for Active Record
-    gem 'sqlite3'
+    # gem 'sqlite3'
     # Pry 
   gem "pry-rails"
   gem "factory_bot_rails"
@@ -81,7 +81,7 @@ group :development do
 end
 
  group :production do
-   gem 'pg'
+  #  gem 'pg'
  end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
