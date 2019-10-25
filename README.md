@@ -1,6 +1,36 @@
-## Roccitt: inspired by Reddit and built on Rails.
+# Roccitt
 
-[Demo Site](https://roccitt.herokuapp.com)
+### inspired by Reddit and built with Ruby and Ruby on Rails.
+
+## [Demo Site](https://roccitt.herokuapp.com)
+
+---
+
+## Home
+
+## <img width="1440" alt="Screen Shot 2019-10-25 at 1 29 14 AM" src="https://user-images.githubusercontent.com/14861025/67548880-a2660d80-f6c8-11e9-8f48-3a2f476634d1.png">
+
+## Profile
+
+## <img width="1440" alt="Screen Shot 2019-10-25 at 1 29 59 AM" src="https://user-images.githubusercontent.com/14861025/67549040-f07b1100-f6c8-11e9-8833-a11943512fce.png">
+
+## Favoriting
+
+<img width="1440" alt="Screen Shot 2019-10-25 at 1 31 28 AM" src="https://user-images.githubusercontent.com/14861025/67548434-726a3a80-f6c7-11e9-99a0-74f7067db552.png">
+
+---
+
+## Mobile
+
+<img width="500" alt="Screen Shot 2019-10-25 at 1 26 33 AM" src="https://user-images.githubusercontent.com/14861025/67548111-a09b4a80-f6c6-11e9-8eae-6f01f1fb998d.png">
+
+<img width="499" alt="Screen Shot 2019-10-25 at 1 27 16 AM" src="https://user-images.githubusercontent.com/14861025/67548116-a3963b00-f6c6-11e9-87ce-ca9a9c62a1a4.png">
+
+<img width="499" alt="Screen Shot 2019-10-25 at 1 28 28 AM" src="https://user-images.githubusercontent.com/14861025/67548180-cd4f6200-f6c6-11e9-8f39-6d5c978cea4e.png">
+
+<img width="500" alt="Screen Shot 2019-10-25 at 1 37 29 AM" src="https://user-images.githubusercontent.com/14861025/67548768-4a2f0b80-f6c8-11e9-9f85-1b86512cad28.png">
+
+---
 
 ## Objectives
 
@@ -40,15 +70,6 @@ A user can sign up, create posts, comment on posts, vote on posts, favorite post
 - SendGrid - email confirmation
 - FactoryBot - defining and using factories
 
-## Setup and Configuration
+---
 
-#### To run Roccitt locally:
-
-CAUTION: DO NOT enter the **\$**. It merely indicates that the subsequent command should be executed at the command line.
-
-1. Clone the repository
-2. `$ cd` into the local repository
-3. Run `$ bundle install`
-4. Create and migrate the database with `$ rake db:create` and `$ rake db:migrate`. NOTE: `$ rails db:create` and `$ rails db:migrate` will work as well.
-5. Start the server using `$ rails server`
-6. Run the app on `$ localhost:3000`
+#### Created by: Tyrant Davis 2019
