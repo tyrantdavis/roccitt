@@ -1,12 +1,12 @@
 <br>
 <% if !current_user  %>
 <%# Hero Content %>
-    <div>
+    <div class="container">
         <div class="jumbotron">
-            <h1 class="text-center">Roccitt</h1>
+            <h1 id="hero" class="text-center">Roccitt</h1>
             <p class="text-center">Roccitt is a resource for sharing your passions, links, and comments with your friends!</p>
             <div class="text-center">
-                <%= link_to "Sign Up", new_user_path, class: 'btn btn-primary' %> today!
+                <%= link_to "Sign Up", new_user_path, class: 'btn btn-default custom-red-button' %> today!
             </div>
         </div>
         <%# Features %>
