@@ -1,4 +1,6 @@
 require 'random_data'
+require 'factory_bot_rails'
+
  # Create Users
  5.times do
    User.create!(
@@ -32,7 +34,7 @@ require 'random_data'
  # #12
    post.update_attribute(:created_at, rand(10.minutes .. 1.year).ago)
  # #13
-   rand(1..5).times { post.votes.create!(value: [-1, 1].sample, user: users.sample) }
+   rand(1..6).times { post.votes.create!(value: [-1, 1].sample, user: users.sample) }
 end
 
 posts = Post.all
