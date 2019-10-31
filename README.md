@@ -20,6 +20,14 @@
 
 ---
 
+## Admin
+
+<img width="1440" alt="Screen Shot 2019-10-31 at 12 39 55 PM" src="https://user-images.githubusercontent.com/14861025/67972328-7113a300-fbdc-11e9-9bd2-8903f695fa45.png">
+
+<img width="1440" alt="Screen Shot 2019-10-31 at 12 40 43 PM" src="https://user-images.githubusercontent.com/14861025/67972335-783ab100-fbdc-11e9-9c14-7cfd15218641.png">
+
+## <img width="1440" alt="Screen Shot 2019-10-31 at 12 41 08 PM" src="https://user-images.githubusercontent.com/14861025/67972333-740e9380-fbdc-11e9-8907-a5f3940b2663.png">
+
 ## Mobile
 
 <img width="500" alt="Screen Shot 2019-10-25 at 1 26 33 AM" src="https://user-images.githubusercontent.com/14861025/67548111-a09b4a80-f6c6-11e9-8eae-6f01f1fb998d.png">
