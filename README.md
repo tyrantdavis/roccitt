@@ -1,6 +1,6 @@
 # Roccitt
 
-### inspired by Reddit and built with Ruby and Ruby on Rails.
+### Inspired by Reddit and built with Ruby and Ruby on Rails. It is a web app that enables users to create topics, posts, and comments. It also features voting and favoriting posts as well as receiving notifications on topics and posts. It also includes a feature for adding Gravatars to user profiles.
 
 ## [Demo Site](https://roccitt.herokuapp.com)
 
@@ -66,6 +66,9 @@ A user can sign up, create posts, comment on posts, vote on posts, favorite post
 - Ruby version: 2.5.1
 - Rails 5.2.3
 - Bootstrap
+- HTML
+- CSS
+- JQuery
 
 #### Database:
 

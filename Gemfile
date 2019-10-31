@@ -6,9 +6,6 @@ ruby '2.5.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1', '>= 5.2.1.1'
 
-# #Solograph
-# gem install solargraph -v 0.1.0
-
 # Bootstrap
 gem 'bootstrap-sass'
 
@@ -77,7 +74,6 @@ group :development do
     # Pry 
   gem "pry-rails"
   gem "factory_bot_rails"
-
 end
 
  group :production do
