@@ -14,7 +14,7 @@ Rails.application.routes.draw do
      post '/down-vote' => 'votes#down_vote', as: :down_vote
    end
    
-  resources :users, only: [:new, :create, :show]
+  resources :users, only: [:new, :create, :show, :index, :destroy]
   resources :sessions, only: [:new, :create, :destroy]
 
   get 'about' => 'welcome#about'

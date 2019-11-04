@@ -1,4 +1,11 @@
 class UsersController < ApplicationController
+  before_action :require_sign_in
+
+  def index
+  #  Only accessible to and Added for Admin Dash
+    @users = User.all.order(:name).paginate(page:params[:page], per_page: 5)
+  end
+
   def new
     @user = User.new
   end
@@ -26,5 +33,30 @@ class UsersController < ApplicationController
    def show
      @user = User.find(params[:id])
      @posts = @user.posts.visible_to(current_user)
+   end
+
+  #  Only accessible to and Added for Admin Dash
+  def destroy
+   @user = User.find(params[:id])
+    if@user.destroy
+      flash[:success] = 'User "#{@user.name}"  was successfully deleted.'
+      redirect_to users_url
+    else
+      flash[:error] = 'Something went wrong'
+      render :show
+    end
+  end
+  
+  private
+  def user_params
+     params.require(:user).permit(:name, :email)
+  end
+ 
+ # #9
+   def authorized_user
+     unless current_user.admin?
+       flash[:alert] = "You must be an admin to do that."
+       redirect_to topics_path
+     end
    end
 end

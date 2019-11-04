@@ -17,6 +17,14 @@
             <%= pluralize(@user.posts.count, 'post') %>,
             <%= pluralize(@user.comments.count, 'comment') %>
           </small>
+          <hr>
+          <% if user_is_authorized_for_users? %>
+            <div id="admin-dash">
+              <small>
+                <%= link_to "View All Users", users_path %>
+              </small>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
