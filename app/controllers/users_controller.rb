@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-  before_action :require_sign_in
-
   def index
   #  Only accessible to and Added for Admin Dash
     @users = User.all.order(:name).paginate(page:params[:page], per_page: 5)
